@@ -1,0 +1,39 @@
+1) Посмотреть где я: pwd
+2) Создать папку: mkdir QA_1
+3) Зайти в папку: cd QA_1
+4) Создать 3 папки: mkdir dir_1 dir_2 dir_3
+5) Зайти в любую папку: cd dir_1
+6) Создать 5 файлов (3 txt, 2 json): touch test_1.txt test_2.txt test_3.txt test_4.json test_5.json
+7) Создать 3 папки: mkdir {dir_11,dir_22,dir_33}
+8) Вывести список содержимого папки: ls или ls -la (если необходимо вывести еще и скрытые файлы)
+9) + Открыть любой txt файл: vim test_1.txt
+10) + написать туда что-нибудь, любой текст: нажать i для перехода в режим редактирования. Написать текст
+11) + сохранить и выйти: нажать Esc :wq
+12) Выйти из папки на уровень выше: cd ..
+13) переместить любые 2 файла, которые вы создали, в любую другую папку: mv dir_1/test_1.txt dir_1/test_2.txt dir_2 
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку: cp dir_1/test_4.json dir_1/test_5.json dir_1/dir_11
+15) Найти файл по имени: find . -name test_1.txt 
+16) просмотреть содержимое в реальном времени: tail -F dir_2/test_1.txt
+17) вывести несколько первых строк из текстового файла: head -4 dir_2/test_1.txt
+18) вывести несколько последних строк из текстового файла: tail -n3 dir_2/test_1.txt
+19) просмотреть содержимое длинного файла: less dir_2/test_1.txt
+20) вывести дату и время: date
+
+*
+1)отправить запрос за сервер: curl http://162.55.220.72:5005/object_info_3\?name\=Vadim\&age\=32\&salary\=1000
+2) Автоматизация команд. Создать папку QA_2 мануально. Перейти в терминал.
+touch script.sh
+vim script.sh
+В vim пишем скрипт:
+#!/bin/bash
+cd QA_2
+mkdir Vika_1 Vika_2 Vika_3
+cd Vika_1
+touch test_1.txt test_2.txt test_3.txt test_4.json test_5.json
+mkdir dir_1 dir_2 dir_3
+ls
+mv test_1.txt test_2.txt dir_1
+echo "Done"
+Запустить скрипт:
+chmod +x ./script.sh
+./script.sh или sh script.sh
